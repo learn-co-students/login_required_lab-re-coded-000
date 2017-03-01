@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+get 'sessions/new', to: 'sessions#new' ## the path must match the controller action, forexample we can't use get 'sessions/login'
+   post 'sessions/create', to: 'sessions#create'
+   root 'application#home'
+   post '/sessions/destroy' , to: 'sessions#destroy'
+   get '/show' , to: 'secrets#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
